@@ -18,7 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    NavigationView navigationView;
+    NavigationView navigation;
     DrawerLayout drawer;
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        navigationView=findViewById(R.id.nav_view);
+        navigation=findViewById(R.id.nav_view);
         drawer=findViewById(R.id.drawer);
 
         toggle=new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, BookActivity.class);
                         startActivity(intent);
                         break;
-
                     case R.id.nav_return :
                         Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                         break;
@@ -84,13 +83,8 @@ public class MainActivity extends AppCompatActivity {
                         drawer.closeDrawer(GravityCompat.START);
                         break;
                 }
-
                 return true;
             }
         });
-
-
-
-
     }
 }
