@@ -63,12 +63,10 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, BookActivity.class);
                         startActivity(intent);
-                        //drawer.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.nav_return :
                         Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
-                        //drawer.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.nav_laptop :
